@@ -10,9 +10,18 @@ print “The digit is prime”. Otherwise, print “The digit is not prime”.
 
 bool isPrime(int x)
 {
-  return ( x == 2 || x == 3 || x == 5 || x == 7); // if user entered 2 or 3 or 5 or 7 - PRIME
-  
+  switch(x)
+    {
+    case 2: // if entered 2
+    case 3: // if 3
+    case 5: // if 5
+    case 7: // if 7
+      return true;
+    }
+
+  return false;
 }
+  
 
 int main()
 {
