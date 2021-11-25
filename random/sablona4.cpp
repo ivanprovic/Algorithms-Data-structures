@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 
 //passing array to functions
 
@@ -18,6 +19,16 @@ void passArray(int prime[5]) //
 
 int main()
 {
+    int value{ 1 };
+    cout << "before passValue: " << value << '\n';
+    passValue(value);
+    cout << "after passValue: " << value << '\n';
+
+    int prime[5]{2, 3, 5, 7, 11 };
+    cout << "before passAray: " <<prime[0] << " " << prime[1] << " " << prime[2] << " " << prime[3] << " " << prime[4] << '\n';
+    passArray(prime);
+    std::cout << "after passArray: " << prime[0] << " " << prime[1] << " " << prime[2] << " " << prime[3] << " " << prime[4] << '\n';
+
 
     return 0;
 }
