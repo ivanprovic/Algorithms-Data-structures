@@ -75,8 +75,28 @@ void HashTable::deleteItem(int key)
     if (i != table[index].end())
     table[index].erase(i);
 }
-//add HashTable::displayHash next
+void HashTable::displayHash()
+{
+    for (int i = 0; i < capacity; i++)
+    {
+    cout << "table[" << i << "]";
+    for(auto x : table[i])
+        cout << " --> " << x;
+    cout << endl;
+    }
+}
 int main()
 {
+    int key[] = {231, 321, 212, 321, 433, 262};
+    int data[] = {123, 432, 523, 43, 423, 111};
+    int size = sizeof(key) / sizeof(key[0]);
+
+    HashTable h(size);
+
+    for (int i = 0; i < size; i++)
+    h.insertItem(key[i], data[i]);
+    h.deleteItem(12);
+    h.displayHash();
+
     return 0;
 }
