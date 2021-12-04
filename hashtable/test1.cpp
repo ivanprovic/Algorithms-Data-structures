@@ -109,7 +109,7 @@ public:
 // Driver's code
 int main()
 {
-    int a[] = { 19, 27, 36, 10, 64 };
+    int a[] = { 19, 27, 36, 10, 64, 14};
     int n = sizeof(a) / sizeof(a[0]);
   
     // inserting keys into hash table
