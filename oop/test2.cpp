@@ -18,5 +18,12 @@ class Fraction {
 
 int main()
 {
+    Fraction fraca(3, 5);
+    Fraction fracb(3);
+    Fraction fracc;
+    // then call helper funcction to display them
+    fraca.show();
+    fracb.show();
+    fracc.show();
     return 0;
 }
