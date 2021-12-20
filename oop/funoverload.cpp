@@ -21,5 +21,8 @@ int main()
     //calling func with int type param
     cout << "absolute val of -5 =  " <<absolute(-5) << '\n';
 
+    //calling func with float type param
+    cout << "Absolute val of 5.5 = " << absolute(5.5f) << endl;
+    
     return 0;
 }
