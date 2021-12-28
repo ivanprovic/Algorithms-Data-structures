@@ -33,5 +33,14 @@ class DerivedClass: public BaseClass {
 
 int main()
 {
+    // pointer to base class
+    BaseClass* base_class_pointer;
+    BaseClass obj_base;
+    DerivedClass obj_derived;
+
+    //pointing to derived class
+    base_class_pointer = &obj_derived;
+
+    base_class_pointer->var_base = 34;
     return 0;
 }
