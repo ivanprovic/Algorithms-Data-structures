@@ -23,9 +23,9 @@ class DerivedClass: public BaseClass {
         //and derived class members
         void display()
         {
-            cout << "Displaying base class"
+            cout << "Displaying base class: "
                  << "variable var_base: " << var_base << '\n';
-            cout << "Displaying derived "
+            cout << "Displaying derived: "
                  << " class variable var_derived: "
                  << var_derived << endl;
         }
@@ -42,5 +42,17 @@ int main()
     base_class_pointer = &obj_derived;
 
     base_class_pointer->var_base = 34;
+
+    //calling base class member func
+    base_class_pointer->display();
+
+    base_class_pointer->var_base = 3400;
+    base_class_pointer->display();
+
+    DerivedClass* derived_class_pointer;
+    derived_class_pointer = &obj_derived;
+    derived_class_pointer->var_base = 9448;
+    derived_class_pointer->display();
+
     return 0;
 }
