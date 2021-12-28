@@ -14,6 +14,23 @@ class BaseClass {
         }
 };
 
+//class derived from the base class
+class DerivedClass: public BaseClass {
+    public:
+        int var_derived;
+
+        //func to display the base
+        //and derived class members
+        void display()
+        {
+            cout << "Displaying base class"
+                 << "variable var_base: " << var_base << '\n';
+            cout << "Displaying derived "
+                 << " class variable var_derived: "
+                 << var_derived << endl;
+        }
+};
+
 int main()
 {
     return 0;
