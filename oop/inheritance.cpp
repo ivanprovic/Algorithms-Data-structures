@@ -19,9 +19,18 @@ virtual void subfunction() {
 }
 };
 
-// add subsecond
+class SubSecond : public Base {
+virtual void subfunction() {
+    cout << "I'm another type of sub class!" << '\n';
+}
+};
 
 int main()
 {
+    SubFirst first;
+    first.printType();
+
+    SubSecond second;
+    second.printType();
     return 0;
 }
