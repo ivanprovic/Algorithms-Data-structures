@@ -94,6 +94,23 @@ class UnaryGate : public LogicGate {
         bool pin, pinTaken;
 };
 
+//class that sets up the logic for an "and" gate
+class AndGate: public BinaryGate {
+    public:
+        AndGate(string n) : BinaryGate(n) {};
+
+        virtual bool performGateLogic() {
+            bool a = getPinA();
+            bool b = getPinB();
+            if (a == 1 && b == 1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+};
+
 int main()
 {
     return 0;
