@@ -4,7 +4,6 @@ using namespace std;
 
 //creates a class with logic gate
 //that returns label and boolean val
-
 class LogicGate {
     public:
         LogicGate(string n) {
@@ -65,6 +64,34 @@ class BinaryGate: public LogicGate {
         }
     private:
         bool pinA, pinATaken, pinB, pinBTaken;
+};
+
+//allows the creation of a logic gate with one input
+class UnaryGate : public LogicGate {
+    public:
+        UnaryGate(string n) : LogicGate(n) {
+            pinTaken = false;
+        }
+        bool getPin() {
+            if (pinTaken == false) {
+                cout << "Enter Pin input for gate " << getLabel() << ": ";
+                cin >> pin;
+                pinTaken = true;
+            }
+            return pin;
+        }
+        virtual void setNextPin(bool source) {
+            if (pinTaken == false) {
+                pin = source;
+                pinTaken = true;
+            }
+            else {
+                return;
+            }
+        }
+
+    private:
+        bool pin, pinTaken;
 };
 
 int main()
