@@ -128,6 +128,21 @@ class OrGate: public BinaryGate {
         }
 };
 
+//class that sets up the logic for a "not" gate
+class NotGate: public UnaryGate {
+    public:
+        NotGate(string n) : UnaryGate(n) {};
+
+        virtual bool performGateLogic() {
+            if (getPin()) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+};
+
 int main()
 {
     return 0;
