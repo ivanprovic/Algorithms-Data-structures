@@ -30,6 +30,43 @@ class LogicGate {
         bool output;
 };
 
+//class that allows the gates to have two inputs
+class BinaryGate: public LogicGate {
+    public:
+        BinaryGate(string n) : LogicGate(n) {
+            pinATaken = false;
+            pinBTaken = false;
+        }
+        bool getPinA() {
+            if (pinATaken == false) {
+                cout << "Enter Pin A input for gate " << getLabel() << ": ";
+                cin >> pinA;
+                pinATaken = true;
+            }
+            return pinA;
+        }
+        bool getPinB() {
+            if (pinBTaken == false) {
+                cout << "Enter Pin B input for gate " << getLabel() << ": ";
+                cin >> pinB;
+                pinBTaken = true;
+            }
+            return pinB;
+        }
+        virtual void setNextPin(bool source) {
+            if (pinATaken == false) {
+                pinA = source; 
+                this->pinATaken = true;
+            }
+            else if (pinBTaken == false) {
+                pinB = source;
+                this->pinBTaken = true;
+            }
+        }
+    private:
+        bool pinA, pinATaken, pinB, pinBTaken;
+};
+
 int main()
 {
     return 0;
