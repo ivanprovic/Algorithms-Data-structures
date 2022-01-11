@@ -111,6 +111,23 @@ class AndGate: public BinaryGate {
         }
 };
 
+//class that sets up the lofic for an "or" gate
+class OrGate: public BinaryGate {
+    public:
+        OrGate(string n) : BinaryGate(n) {};
+
+        virtual bool performGateLogic() {
+            bool a = getPinA();
+            bool b = getPinB();
+            if (a == 1 || b == 1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+};
+
 int main()
 {
     return 0;
