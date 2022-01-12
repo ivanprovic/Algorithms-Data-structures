@@ -143,6 +143,23 @@ class NotGate: public UnaryGate {
         }
 };
 
+class Connector {
+    public:
+        Connector(LogicGate *fgate, LogicGate *tgate) {
+            fromgate = fgate;
+            togate = tgate;
+            tgate->setNextPin(fromgate->getOutput());
+        }
+        LogicGate *getFrom() {
+            return fromgate;
+        }
+        LogicGate *getTo() {
+            return togate;
+        }
+    private:
+        LogicGate *fromgate, *togate;
+};
+
 int main()
 {
     return 0;
