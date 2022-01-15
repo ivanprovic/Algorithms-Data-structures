@@ -12,6 +12,6 @@ int sumOfN(int n) {
 
 int main(){
     //n is 10 (10 + 9 + 8)
-    cout << sumOfN(10);
+    cout << sumOfN(10); //first to execute
     return 0;
 }
