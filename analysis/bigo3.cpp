@@ -12,7 +12,14 @@ void segregate0and1(int arr[], int n)
   //finish 
 }
 
+void print(int arr[], int n)
+{
+  //print segregated array
+}
+
 int main()
 {
+  int arr[] = {0, 1, 0, 1, 1, 1};
+  int n = sizeof(arr) / sizeof(arr[0]);
   return 0;
 }
